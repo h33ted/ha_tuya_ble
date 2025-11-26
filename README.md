@@ -1,5 +1,5 @@
 # Home Assistant support for Tuya BLE devices
-##  My attempt to track the community based pull requests that make Tuya BLE work while PlusPlus-ua is offline.  
+##  Adding support for SB-02 (MOES BLE Toggle Switch)  
 ## Overview
 
 This integration supports Tuya devices connected via BLE.
@@ -10,7 +10,7 @@ _Inspired by code of [@redphx](https://github.com/redphx/poc-tuya-ble-fingerbot)
 
 Place the `custom_components` folder in your configuration directory (or add its contents to an existing `custom_components` folder). Alternatively install via [HACS](https://hacs.xyz/).
 
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=stevewrightnz&repository=ha_tuya_ble&category=integration)
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=h33ted&repository=ha_tuya_ble&category=integration)
 
 ## Usage
 
@@ -26,6 +26,7 @@ The integration works locally, but connection to Tuya BLE device requires device
   + Fingerbot Plus (product_ids 'blliqpsj', 'ndvkgsrm', 'yiihr7zh', 'neq16kgd'), almost same as original, has sensor button for manual control.
   + CubeTouch 1s (product_id '3yqdo5yt'), built-in battery with USB type C charging.
   + CubeTouch II (product_id 'xhf790if'), built-in battery with USB type C charging.
+  + MOES Tuya Smart FingerBot SB-02 (product_id '4ctjfrzq'), built-in battery with USB type C charging.
 
   All features available in Home Assistant, programming (series of actions) is implemented for Fingerbot Plus.
   For programming exposed entities 'Program' (switch), 'Repeat forever', 'Repeats count', 'Idle position' and 'Program' (text). Format of program text is: 'position\[/time\];...' where position is in percents, optional time is in seconds (zero if missing).
@@ -52,8 +53,5 @@ The integration works locally, but connection to Tuya BLE device requires device
 The original support request still applies - I'm happy to contribute to the community without reward.  If you want to contribule please donate as below.
 
 PlusPlus-ua is working on this integration in Ukraine. Our country was subjected to brutal aggression by Russia. The war still continues. The capital of Ukraine - Kyiv, where I live, and many other cities and villages are constantly under threat of rocket attacks. Our air defense forces are doing wonders, but they also need support. So if you want to help the development of this integration, donate some money and I will spend it to support our air defense.
-<br><br>
-<p align="center">
-  <a href="https://www.buymeacoffee.com/3PaK6lXr4l"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy me an air defense"></a>
-</p>
+
 
