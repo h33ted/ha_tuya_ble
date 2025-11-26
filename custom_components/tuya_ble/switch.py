@@ -175,6 +175,38 @@ mapping: dict[str, TuyaBLECategorySwitchMapping] = {
             ),
         }
     ),
+    "sb02": TuyaBLECategorySwitchMapping(
+        products={
+            **dict.fromkeys(
+                ["4ctjfrzq"],  # Switch Robot SB02
+                [
+                    TuyaBLESwitchMapping(
+                        dp_id=1,
+                        description=SwitchEntityDescription(
+                            key="switch_1",
+                            icon="mdi:toggle-switch",
+                        ),
+                    ),
+                    TuyaBLESwitchMapping(
+                        dp_id=104,
+                        description=SwitchEntityDescription(
+                            key="switch_invert",
+                            icon="mdi:swap-horizontal",
+                            entity_category=EntityCategory.CONFIG,
+                        ),
+                    ),
+                    TuyaBLESwitchMapping(
+                        dp_id=121,
+                        description=SwitchEntityDescription(
+                            key="adaptive_movement",
+                            icon="mdi:auto-fix",
+                            entity_category=EntityCategory.CONFIG,
+                        ),
+                    ),
+                ],
+            ),
+        },
+    ),
     "szjqr": TuyaBLECategorySwitchMapping(
         products={
             **dict.fromkeys(

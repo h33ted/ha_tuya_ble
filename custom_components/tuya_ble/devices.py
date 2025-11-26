@@ -194,6 +194,16 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
             ),
         },
     ),
+    "sb02": TuyaBLECategoryInfo(
+        products={
+            **dict.fromkeys(
+                ["4ctjfrzq"],  # device product_id
+                TuyaBLEProductInfo(
+                    name="Switch Robot SB02",
+                ),
+            ),
+        },
+    ),
     "szjqr": TuyaBLECategoryInfo(
         products={
             "3yqdo5yt": TuyaBLEProductInfo(  # device product_id

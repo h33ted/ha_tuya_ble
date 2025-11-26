@@ -167,6 +167,25 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
             ),
         }
     ),
+    "sb02": TuyaBLECategorySensorMapping(
+        products={
+            **dict.fromkeys(
+                ["4ctjfrzq"],  # Switch Robot SB02
+                [
+                    TuyaBLEBatteryMapping(dp_id=105),
+                    TuyaBLESensorMapping(
+                        dp_id=111,
+                        description=SensorEntityDescription(
+                            key="total_movement",
+                            icon="mdi:counter",
+                            state_class=SensorStateClass.TOTAL_INCREASING,
+                            entity_category=EntityCategory.DIAGNOSTIC,
+                        ),
+                    ),
+                ],
+            ),
+        }
+    ),
     "szjqr": TuyaBLECategorySensorMapping(
         products={
             **dict.fromkeys(

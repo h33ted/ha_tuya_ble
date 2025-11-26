@@ -104,6 +104,28 @@ mapping: dict[str, TuyaBLECategorySelectMapping] = {
             ),
         }
     ),
+    "sb02": TuyaBLECategorySelectMapping(
+        products={
+            **dict.fromkeys(
+                ["4ctjfrzq"],  # Switch Robot SB02
+                [
+                    TuyaBLESelectMapping(
+                        dp_id=101,
+                        description=SelectEntityDescription(
+                            key="mode",
+                            options=[
+                                "switch",
+                                "click",
+                                "program",
+                            ],
+                            icon="mdi:cog",
+                            entity_category=EntityCategory.CONFIG,
+                        ),
+                    ),
+                ]
+            ),
+        }
+    ),
     "szjqr": TuyaBLECategorySelectMapping(
         products={
             **dict.fromkeys(
@@ -146,33 +168,6 @@ mapping: dict[str, TuyaBLECategorySelectMapping] = {
                         ],
                         entity_registry_enabled_default=False,
                     )
-                ),
-            ],
-        },
-    ),
-    "znhsb": TuyaBLECategorySelectMapping(
-        products={
-            "cdlandip":  # Smart water bottle
-            [
-                TuyaBLESelectMapping(
-                    dp_id=106,
-                    description=TemperatureUnitDescription(
-                        options=[
-                            UnitOfTemperature.CELSIUS,
-                            UnitOfTemperature.FAHRENHEIT,
-                        ],
-                    )
-                ),
-                TuyaBLESelectMapping(
-                    dp_id=107,
-                    description=SelectEntityDescription(
-                        key="reminder_mode",
-                        options=[
-                            "interval_reminder",
-                            "schedule_reminder",
-                        ],
-                        entity_category=EntityCategory.CONFIG,
-                    ),
                 ),
             ],
         },
@@ -252,10 +247,12 @@ class TuyaBLESelect(TuyaBLEEntity, SelectEntity):
         datapoint = self._device.datapoints[self._mapping.dp_id]
         if datapoint:
             value = datapoint.value
-            if value >= 0 and value < len(self._attr_options):
+            if isinstance(value, int) and value >= 0 and value < len(self._attr_options):
                 return self._attr_options[value]
-            else:
+            elif isinstance(value, str) and value in self._attr_options:
                 return value
+            else:
+                return str(value)
         return None
 
     def select_option(self, value: str) -> None:

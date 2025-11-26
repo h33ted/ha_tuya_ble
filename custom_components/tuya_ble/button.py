@@ -60,6 +60,22 @@ class TuyaBLECategoryButtonMapping:
 
 
 mapping: dict[str, TuyaBLECategoryButtonMapping] = {
+    "sb02": TuyaBLECategoryButtonMapping(
+        products={
+            **dict.fromkeys(
+                ["4ctjfrzq"],  # Switch Robot SB02
+                [
+                    TuyaBLEButtonMapping(
+                        dp_id=108,
+                        description=ButtonEntityDescription(
+                            key="click",
+                            icon="mdi:gesture-tap",
+                        ),
+                    ),
+                ],
+            ),
+        }
+    ),
     "szjqr": TuyaBLECategoryButtonMapping(
         products={
             **dict.fromkeys(

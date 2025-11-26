@@ -247,6 +247,40 @@ mapping: dict[str, TuyaBLECategoryNumberMapping] = {
             ],
         },
     ),
+    "sb02": TuyaBLECategoryNumberMapping(
+        products={
+            **dict.fromkeys(
+                ["4ctjfrzq"],  # Switch Robot SB02
+                [
+                    TuyaBLENumberMapping(
+                        dp_id=102,
+                        description=NumberEntityDescription(
+                            key="rotate_angle",
+                            icon="mdi:angle-acute",
+                            native_max_value=90,
+                            native_min_value=10,
+                            native_step=1,
+                            native_unit_of_measurement="°",
+                            entity_category=EntityCategory.CONFIG,
+                        ),
+                        mode=NumberMode.SLIDER,
+                    ),
+                    TuyaBLENumberMapping(
+                        dp_id=103,
+                        description=NumberEntityDescription(
+                            key="sustain_time",
+                            icon="mdi:timer-sand",
+                            native_max_value=10,
+                            native_min_value=0,
+                            native_unit_of_measurement=UnitOfTime.SECONDS,
+                            native_step=1,
+                            entity_category=EntityCategory.CONFIG,
+                        ),
+                    ),
+                ],
+            ),
+        },
+    ),
     "szjqr": TuyaBLECategoryNumberMapping(
         products={
             **dict.fromkeys(
