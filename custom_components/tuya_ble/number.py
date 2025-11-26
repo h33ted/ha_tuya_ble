@@ -247,7 +247,7 @@ mapping: dict[str, TuyaBLECategoryNumberMapping] = {
             ],
         },
     ),
-    "sb02": TuyaBLECategoryNumberMapping(
+    "kg": TuyaBLECategoryNumberMapping(
         products={
             **dict.fromkeys(
                 ["4ctjfrzq"],  # Switch Robot SB02

@@ -175,7 +175,7 @@ mapping: dict[str, TuyaBLECategorySwitchMapping] = {
             ),
         }
     ),
-    "sb02": TuyaBLECategorySwitchMapping(
+    "kg": TuyaBLECategorySwitchMapping(
         products={
             **dict.fromkeys(
                 ["4ctjfrzq"],  # Switch Robot SB02

@@ -60,7 +60,7 @@ class TuyaBLECategoryButtonMapping:
 
 
 mapping: dict[str, TuyaBLECategoryButtonMapping] = {
-    "sb02": TuyaBLECategoryButtonMapping(
+    "kg": TuyaBLECategoryButtonMapping(
         products={
             **dict.fromkeys(
                 ["4ctjfrzq"],  # Switch Robot SB02
