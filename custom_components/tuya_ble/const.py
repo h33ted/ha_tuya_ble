@@ -301,10 +301,3 @@ TUYA_COUNTRIES = [
     Country("Zambia", "260", TuyaCloudOpenAPIEndpoint.EUROPE),
     Country("Zimbabwe", "263", TuyaCloudOpenAPIEndpoint.EUROPE),
 ]
-PLATFORMS = [
-    Platform.SENSOR,
-    Platform.SWITCH,
-    Platform.NUMBER,
-    Platform.SELECT,
-    Platform.BUTTON,
-]
